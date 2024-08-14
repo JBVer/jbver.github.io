@@ -62,17 +62,10 @@ async function getVisitorIP() {
   }
 }
 
-// Function to generate a random status code for demonstration purposes
-function getRandomStatusCode() {
-  const statusCodes = [200, 301, 404, 500];
-  const randomIndex = Math.floor(Math.random() * statusCodes.length);
-  return statusCodes[randomIndex];
-}
-
 // Logging the visit
 function logVisit() {
   getVisitorIP().then((visitorIP) => {
-    const log = `Status Code: ${getRandomStatusCode()} | Timestamp: ${new Date().toLocaleString()} | Sender IP: ${visitorIP} | Referrer IP: ${getReferrerIP()}`;
+    const log = `Timestamp: ${new Date().toLocaleString()} | Sender IP: ${visitorIP} | Referrer IP: ${getReferrerIP()}`;
     addLogEntry(log);
   });
 }
